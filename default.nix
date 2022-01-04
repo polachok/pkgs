@@ -2,4 +2,5 @@
 
 rec {
   pt = pkgs.callPackage ./pt {};
+  solana = pkgs.callPackage ./solana {};
 }
