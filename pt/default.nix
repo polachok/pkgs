@@ -2,16 +2,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "pt";
-  version = "unstable-2021-12-29";
+  version = "unstable-2021-01-12";
 
   src = fetchFromGitHub {
     owner = "polachok";
     repo = "pt";
-    rev = "3024d3e253e811ed00d4934fffd14ec6bb44728e";
-    sha256 = "09k8sgg4flh4prg6p1x22z34hxv1dy7k9xigw3yhw4hp3bcfsp56";
+    rev = "e0093deaca50b17d9d865b5c9e701d9a172f4ce6";
+    sha256 = "1wmqbr9lj68vhlrj68gp1ficikgqhxkc8xkajvzkzflbszr2yxym";
   };
 
-  cargoSha256 = "1s1q2fvi360ydi0czwfgnf0fihl9jpd7zkv1s8zn35c86vqqz40c";
+  cargoSha256 = "0nn5l7vw73xyhkskvpbidkzak2r4827insd3gg0q34zz5c4gysgp";
 
   nativeBuildInputs = with pkgs; [ pkg-config gtk3 glib vte ];
   buildInputs = with pkgs; [ gtk3 glib vte ];
