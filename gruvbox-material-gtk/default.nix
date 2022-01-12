@@ -28,6 +28,8 @@ stdenv.mkDerivation rec {
     gtk-engine-murrine
   ];
 
+  patches = [ ./green.diff ];
+
   dontBuild = true;
 
   installPhase = ''
