@@ -9,7 +9,7 @@
 
 stdenv.mkDerivation rec {
   pname = "gruvbox-material-gtk";
-  version = "1.0";
+  version = "1.0-${src.rev}";
 
   src = fetchFromGitHub {
     owner = "TheGreatMcPain";
@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
     gtk-engine-murrine
   ];
 
-  patches = [ ./green.diff ];
+  patches = [ ./color.diff ./tabs.diff ];
 
   dontBuild = true;
 
