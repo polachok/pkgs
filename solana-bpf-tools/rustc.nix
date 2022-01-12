@@ -44,7 +44,7 @@ pkgs.rustc.overrideDerivation(old: rec {
     nativeBuildInputs = [ pkgs.python3 rustPlatform.cargoSetupHook clang pkgs.cmake ];
     buildPhase = ''
       export VERBOSE=1
-      cat config.toml|grep -v '^#'
+      cat config.toml | sed 's/#.*//;/^$/d'
       cp -r $cargoDeps ./vendor
       ls -a
       python ./x.py build --stage 1 --target=x86_64-unknown-linux-gnu,bpfel-unknown-unknown
@@ -84,7 +84,7 @@ pkgs.rustc.overrideDerivation(old: rec {
       llvm-readobj
       EOF
       )
-      cp -R "rust/build/${host_triple}/llvm/build/lib/clang" deploy/llvm/lib/
+      cp -R "build/${host_triple}/llvm/build/lib/clang" $out/llvm/lib/
     '';
     postInstall = "";
     outputs = ["out"];
