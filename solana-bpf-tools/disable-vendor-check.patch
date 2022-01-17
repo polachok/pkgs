@@ -1,0 +1,13 @@
+diff --git a/src/bootstrap/bootstrap.py b/src/bootstrap/bootstrap.py
+index e34768bc2c9..02fd11d5a33 100644
+--- a/out/rust/src/bootstrap/bootstrap.py
++++ b/out/rust/src/bootstrap/bootstrap.py
+@@ -1156,7 +1156,7 @@ def bootstrap(help_triggered):
+ 
+     build.use_locked_deps = build.get_toml('locked-deps', 'build') == 'true'
+ 
+-    build.check_vendored_status()
++    #build.check_vendored_status()
+ 
+     build_dir = build.get_toml('build-dir', 'build') or 'build'
+     build.build_dir = os.path.abspath(build_dir.replace("$ROOT", build.rust_root))

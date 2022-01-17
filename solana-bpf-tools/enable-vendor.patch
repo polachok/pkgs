@@ -1,0 +1,31 @@
+diff --git a/config.toml b/config.toml
+index e57333abfca..341096d8f6a 100644
+--- a/out/rust/config.toml
++++ b/out/rust/config.toml
+@@ -132,11 +132,11 @@ enable-projects = "clang;lld"
+ 
+ # Instead of downloading the src/stage0.txt version of Cargo specified, use
+ # this Cargo binary instead to build all Rust code
+-#cargo = "/path/to/bin/cargo"
++cargo = "@cargo@"
+ 
+ # Instead of downloading the src/stage0.txt version of the compiler
+ # specified, use this rustc binary instead as the stage0 snapshot compiler.
+-#rustc = "/path/to/bin/rustc"
++rustc = "@rustc@"
+ 
+ # Flag to specify whether any documentation is built. If false, rustdoc and
+ # friends will still be compiled but they will not be used to generate any
+@@ -172,10 +172,10 @@ docs = false
+ 
+ # Force Cargo to check that Cargo.lock describes the precise dependency
+ # set that all the Cargo.toml files create, instead of updating it.
+-#locked-deps = false
++locked-deps = true
+ 
+ # Indicate whether the vendored sources are used for Rust dependencies or not
+-#vendor = false
++vendor = true
+ 
+ # Typically the build system will build the rust compiler twice. The second
+ # compiler, however, will simply use its own libraries to link against. If you
